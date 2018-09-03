@@ -1,1 +1,17 @@
 {% extends 'README.rst.jj2' %}
+
+{% block features %}
+
+Batch download
+-----------------------
+
+`yt2mp3 batch [URL] ...`
+
+
+Get a sub clip of the whole audio inside a video
+----------------------------------------------------------------------------------
+
+`yt2mp3 clip URL start stop`
+
+
+{% endblock %}

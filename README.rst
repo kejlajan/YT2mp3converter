@@ -13,6 +13,19 @@ youtube2mp3
    :target: http://youtube2mp3.readthedocs.org/en/latest/
 
 
+Batch download
+-----------------------
+
+`yt2mp3 batch [URL] ...`
+
+
+Get a sub clip of the whole audio inside a video
+----------------------------------------------------------------------------------
+
+`yt2mp3 clip URL start stop`
+
+
+
 Installation
 ================================================================================
 

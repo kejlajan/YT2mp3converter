@@ -10,5 +10,8 @@ copyright_year: 2018
 command_line_interface: "yt2mp3"
 entry_point: "youtube2mp3.main:main"
 license: MIT
-dependencies: []
+dependencies:
+  - youtube-dl
+  - moviepy
+  - fire
 description: "Convert youtube video to mp3 so that you can burn them into a CD for your family. Please respect copyright when you do so!!"

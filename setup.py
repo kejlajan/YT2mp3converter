@@ -44,12 +44,16 @@ CLASSIFIERS = [
 ]
 
 INSTALL_REQUIRES = [
+    'youtube-dl',
+    'moviepy',
+    'fire',
 ]
 SETUP_COMMANDS = {}
 
 
 PACKAGES = find_packages(exclude=['ez_setup', 'examples', 'tests'])
-EXTRAS_REQUIRE = {}
+EXTRAS_REQUIRE = {
+}
 # You do not need to read beyond this line
 PUBLISH_COMMAND = '{0} setup.py sdist bdist_wheel upload -r pypi'.format(
     sys.executable)
