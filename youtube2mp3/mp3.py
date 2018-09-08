@@ -9,8 +9,12 @@ TIME_FORMAT = '%H:%M:%S'
 
 def save_as_mp3(file_name, clip_info):
     clip = AudioFileClip(file_name)
-    t_start, t_end = parse_clip_info(clip_info)
+
+    t_start, t_end, duration = parse_clip_info(clip_info)
+    print(t_start, t_end, duration)
     clip = clip.subclip(t_start=t_start, t_end=t_end)
+    if duration:
+        clip = clip.set_duration(duration)
     name, suffix = os.path.splitext(file_name)
     try:
         clip.write_audiofile('{}.mp3'.format(name))
@@ -22,6 +26,7 @@ def save_as_mp3(file_name, clip_info):
 def parse_clip_info(clip_info):
     t_start = 0
     t_end = None
+    duration = None
     if 'start' in clip_info or 'stop' in clip_info:
         start = clip_info.get('start', 0)
         stop = clip_info.get('stop', None)
@@ -32,11 +37,11 @@ def parse_clip_info(clip_info):
             if stop:
                 stop = get_time(stop)
                 duration = stop - start
-                t_end = duration.total_seconds()
+                t_end = (stop.hour, stop.minute, stop.second)
         else:
             stop = get_time(stop)
             t_end = stop.total_seconds()
-    return t_start, t_end
+    return t_start, t_end, duration.total_seconds()
 
 
 def get_time(time_string):
