@@ -46,7 +46,6 @@ CLASSIFIERS = [
 INSTALL_REQUIRES = [
     'youtube-dl',
     'moviepy',
-    'fire',
 ]
 SETUP_COMMANDS = {}
 

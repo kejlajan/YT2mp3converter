@@ -17,7 +17,7 @@ def main():
         cleansed_url = []
         for url in urls:
             result = urlparse(url)
-            query, number = get_query(result.query)
+            query, number = _get_query(result.query)
             cleansed_url.append(URL + query['v'])
             clip_info_list.append(query)
         dl.download(urls)
@@ -26,7 +26,7 @@ def main():
             os.unlink(file_name)
 
 
-def get_query(query):
+def _get_query(query):
     tokens = query.split('&')
     abc = {}
     number_of_keys = 0

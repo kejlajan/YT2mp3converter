@@ -13,5 +13,4 @@ license: MIT
 dependencies:
   - youtube-dl
   - moviepy
-  - fire
 description: "Convert youtube video to mp3 so that you can burn them into a CD for your family. Please respect copyright when you do so!!"
