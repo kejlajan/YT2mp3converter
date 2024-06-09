@@ -18,12 +18,11 @@ jobs:
       run: pip install nuitka
 
     - name: Compile Python script
-      run: nuitka --standalone --onefile --output-dir=dist downloader.py
+      run: nuitka --standalone --onefile --output-dir=build/downloader downloader.py
 
-    - name: Upload artifact
+    - name: Upload executable
       uses: actions/upload-artifact@v2
       with:
-        name: downloader-exe
-        path: dist/downloader.exe
-
+        name: downloader.exe
+        path: build/downloader/downloader.exe
 
