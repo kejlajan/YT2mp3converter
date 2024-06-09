@@ -18,7 +18,7 @@ jobs:
       run: pip install nuitka
 
     - name: Compile Python script
-      run: nuitka3 --standalone --onefile --output-dir=dist downloader.py
+      run: nuitka --standalone --onefile --output-dir=dist downloader.py
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
